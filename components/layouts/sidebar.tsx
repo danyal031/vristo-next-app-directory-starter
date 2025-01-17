@@ -105,16 +105,14 @@ const Sidebar = () => {
                     <PerfectScrollbar className="relative h-[calc(100vh-80px)]">
                         <ul className="relative space-y-0.5 p-4 py-0 font-semibold">
                             {' '}
-                            <ul>
-                                <li className="nav-item">
-                                    <Link href="/" className="group">
-                                        <div className="flex items-center">
-                                            <IconMenuChat className="shrink-0 group-hover:!text-primary" />
-                                            <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">داشبورد</span>
-                                        </div>
-                                    </Link>
-                                </li>
-                            </ul>
+                            <li className="nav-item">
+                                <Link href="/" className="group">
+                                    <div className="flex items-center">
+                                        <IconMenuChat className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">داشبورد</span>
+                                    </div>
+                                </Link>
+                            </li>
                             <li className="menu nav-item">
                                 <button type="button" className={`${currentMenu === 'products' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('products')}>
                                     <div className="flex items-center">
@@ -130,13 +128,30 @@ const Sidebar = () => {
                                 <AnimateHeight duration={300} height={currentMenu === 'products' ? 'auto' : 0}>
                                     <ul className="sub-menu text-gray-500">
                                         <li>
-                                            <Link href="/products">محصولات</Link>
+                                            <Link href="/products/add">ایجاد محصول</Link>
                                         </li>
                                         <li>
                                             <Link href="/products/categories">دسته بندی محصولات</Link>
                                         </li>
+                                    </ul>
+                                </AnimateHeight>
+                            </li>{' '}
+                            <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'suppliers' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('suppliers')}>
+                                    <div className="flex items-center">
+                                        <IconMenuDashboard className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">تامین کنندگان</span>
+                                    </div>
+
+                                    <div className={currentMenu !== 'suppliers' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                        <IconCaretDown />
+                                    </div>
+                                </button>
+
+                                <AnimateHeight duration={300} height={currentMenu === 'suppliers' ? 'auto' : 0}>
+                                    <ul className="sub-menu text-gray-500">
                                         <li>
-                                            <Link href="/suppliers">تامین کنندگان</Link>
+                                            <Link href="/suppliers/add">ایجاد تامین کننده</Link>
                                         </li>
                                     </ul>
                                 </AnimateHeight>

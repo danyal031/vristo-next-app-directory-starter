@@ -21,9 +21,16 @@ const AddProducts = () => {
             </div>
         );
     };
-    return;
-
-    <>{renderForm()}</>;
+    return (
+        <>
+            <div className="grid grid-cols-1 gap-3">
+                {renderForm()}
+                <div className="flex items-center justify-end">
+                    <button className="rounded-xl bg-yellow-600 p-2 px-4">اضافه کردن</button>{' '}
+                </div>
+            </div>
+        </>
+    );
 };
 
 export default AddProducts;
