@@ -1,22 +1,22 @@
-import AddSuppliers from '@/components/suppliers/add/AddSuppliers';
+import AddProducts from '@/components/Warehouse-Management/products/add/AddProducts';
 import Link from 'next/link';
 import React from 'react';
 
-const page = () => {
+const Products = () => {
     return (
         <div className="">
             {' '}
             <ul className="mb-6 flex space-x-2 rtl:space-x-reverse">
                 <li>
-                    <span>تامین کنندگان</span>
+                    <span>محصولات</span>
                 </li>
                 <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                    <span>ایجاد تامین کننده</span>
+                    <span>ایجاد محصول</span>
                 </li>
             </ul>
-            <AddSuppliers />
+            <AddProducts />
         </div>
     );
 };
 
-export default page;
+export default Products;

@@ -1,8 +1,8 @@
-import AddProducts from '@/components/products/add/AddProducts';
+import AddCategories from '@/components/Warehouse-Management/products/categories/AddCategories';
 import Link from 'next/link';
 import React from 'react';
 
-const Products = () => {
+const ProductsCategories = () => {
     return (
         <div className="">
             {' '}
@@ -11,12 +11,12 @@ const Products = () => {
                     <span>محصولات</span>
                 </li>
                 <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                    <span>ایجاد محصول</span>
+                    <span>دسته بندی محصولات</span>
                 </li>
             </ul>
-            <AddProducts />
+            <AddCategories />
         </div>
     );
 };
 
-export default Products;
+export default ProductsCategories;

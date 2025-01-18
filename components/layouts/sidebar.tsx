@@ -104,55 +104,149 @@ const Sidebar = () => {
                     </div>
                     <PerfectScrollbar className="relative h-[calc(100vh-80px)]">
                         <ul className="relative space-y-0.5 p-4 py-0 font-semibold">
-                            {' '}
-                            <li className="nav-item">
-                                <Link href="/" className="group">
-                                    <div className="flex items-center">
-                                        <IconMenuChat className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">داشبورد</span>
-                                    </div>
-                                </Link>
-                            </li>
                             <li className="menu nav-item">
-                                <button type="button" className={`${currentMenu === 'products' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('products')}>
+                                <button type="button" className={`${currentMenu === 'warehouseManagement' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('warehouseManagement')}>
                                     <div className="flex items-center">
                                         <IconMenuDashboard className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">محصولات</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">مدیریت انبار</span>
                                     </div>
 
-                                    <div className={currentMenu !== 'products' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                    <div className={currentMenu !== 'warehouseManagement' ? '-rotate-90 rtl:rotate-90' : ''}>
                                         <IconCaretDown />
                                     </div>
                                 </button>
-
-                                <AnimateHeight duration={300} height={currentMenu === 'products' ? 'auto' : 0}>
+                                <AnimateHeight duration={300} height={currentMenu === 'warehouseManagement' ? 'auto' : 0}>
                                     <ul className="sub-menu text-gray-500">
                                         <li>
-                                            <Link href="/products/add">ایجاد محصول</Link>
+                                            <Link href="/products/inventory">انبار و موجودی کالا</Link>
                                         </li>
                                         <li>
-                                            <Link href="/products/categories">دسته بندی محصولات</Link>
+                                            <Link href="/products/categories">تعریف دسته</Link>
+                                        </li>{' '}
+                                        <li>
+                                            <Link href="/products/add">تعریف کالا</Link>
                                         </li>
                                     </ul>
                                 </AnimateHeight>
                             </li>{' '}
                             <li className="menu nav-item">
-                                <button type="button" className={`${currentMenu === 'suppliers' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('suppliers')}>
+                                <button type="button" className={`${currentMenu === 'tradeManagement' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('tradeManagement')}>
                                     <div className="flex items-center">
                                         <IconMenuDashboard className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">تامین کنندگان</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">مدیریت خرید و فروش</span>
                                     </div>
 
-                                    <div className={currentMenu !== 'suppliers' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                    <div className={currentMenu !== 'tradeManagement' ? '-rotate-90 rtl:rotate-90' : ''}>
                                         <IconCaretDown />
                                     </div>
                                 </button>
 
-                                <AnimateHeight duration={300} height={currentMenu === 'suppliers' ? 'auto' : 0}>
+                                <AnimateHeight duration={300} height={currentMenu === 'tradeManagement' ? 'auto' : 0}>
                                     <ul className="sub-menu text-gray-500">
                                         <li>
-                                            <Link href="/suppliers/add">ایجاد تامین کننده</Link>
+                                            <Link href="/trade/list">خرید و فروش</Link>
+                                        </li>{' '}
+                                        <li>
+                                            <Link href="/purchase/add">ثبت خرید</Link>
+                                        </li>{' '}
+                                        <li>
+                                            <Link href="/sale/add">ثبت فروش</Link>
                                         </li>
+                                    </ul>
+                                </AnimateHeight>
+                            </li>{' '}
+                            <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'financialManagement' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('financialManagement')}>
+                                    <div className="flex items-center">
+                                        <IconMenuDashboard className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">مدیریت مالی</span>
+                                    </div>
+
+                                    <div className={currentMenu !== 'financialManagement' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                        <IconCaretDown />
+                                    </div>
+                                </button>
+
+                                <AnimateHeight duration={300} height={currentMenu === 'financialManagement' ? 'auto' : 0}>
+                                    <ul className="sub-menu text-gray-500">
+                                        <li>
+                                            <Link href="/check">چک</Link>
+                                        </li>{' '}
+                                        <li>
+                                            <Link href="/transactions">دریافت و پرداخت</Link>
+                                        </li>{' '}
+                                    </ul>
+                                </AnimateHeight>
+                            </li>{' '}
+                            <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'accountPartners' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('accountPartners')}>
+                                    <div className="flex items-center">
+                                        <IconMenuDashboard className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">مدیریت طرفین حساب</span>
+                                    </div>
+
+                                    <div className={currentMenu !== 'accountPartners' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                        <IconCaretDown />
+                                    </div>
+                                </button>
+
+                                <AnimateHeight duration={300} height={currentMenu === 'accountPartners' ? 'auto' : 0}>
+                                    <ul className="sub-menu text-gray-500">
+                                        <li>
+                                            <Link href="/customer">مشتری</Link>
+                                        </li>{' '}
+                                        <li>
+                                            <Link href="/supplier">تامین کننده</Link>
+                                        </li>{' '}
+                                        <li>
+                                            <Link href="/supplier/add">ثبت مشتری/تأمین‌کننده</Link>
+                                        </li>{' '}
+                                    </ul>
+                                </AnimateHeight>
+                            </li>{' '}
+                            <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'otherOperations' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('otherOperations')}>
+                                    <div className="flex items-center">
+                                        <IconMenuDashboard className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">سایر عملیات ها</span>
+                                    </div>
+
+                                    <div className={currentMenu !== 'otherOperations' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                        <IconCaretDown />
+                                    </div>
+                                </button>
+
+                                <AnimateHeight duration={300} height={currentMenu === 'otherOperations' ? 'auto' : 0}>
+                                    <ul className="sub-menu text-gray-500">
+                                        <li>
+                                            <Link href="/Services">ارائه خدمات</Link>
+                                        </li>{' '}
+                                        <li>
+                                            <Link href="/expense/add">ثبت هزینه ها</Link>
+                                        </li>{' '}
+                                    </ul>
+                                </AnimateHeight>
+                            </li>{' '}
+                            <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'reports' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('reports')}>
+                                    <div className="flex items-center">
+                                        <IconMenuDashboard className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">گزارش ها</span>
+                                    </div>
+
+                                    <div className={currentMenu !== 'reports' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                        <IconCaretDown />
+                                    </div>
+                                </button>
+
+                                <AnimateHeight duration={300} height={currentMenu === 'reports' ? 'auto' : 0}>
+                                    <ul className="sub-menu text-gray-500">
+                                        <li>
+                                            <Link href="/report/accounts">گزارش حساب ها</Link>
+                                        </li>{' '}
+                                        <li>
+                                            <Link href="/report/cost-benefit">گزارش سود و زیان</Link>
+                                        </li>{' '}
                                     </ul>
                                 </AnimateHeight>
                             </li>
