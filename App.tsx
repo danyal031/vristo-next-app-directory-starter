@@ -27,11 +27,7 @@ function App({ children }: PropsWithChildren) {
     }, [dispatch, initLocale, themeConfig.theme, themeConfig.menu, themeConfig.layout, themeConfig.rtlClass, themeConfig.animation, themeConfig.navbar, themeConfig.locale, themeConfig.semidark]);
 
     return (
-        <div
-            className={`${(themeConfig.sidebar && 'toggle-sidebar') || ''} ${themeConfig.menu} ${themeConfig.layout} ${
-                themeConfig.rtlClass
-            } main-section relative font-nunito text-sm font-normal antialiased`}
-        >
+        <div className={`${(themeConfig.sidebar && 'toggle-sidebar') || ''} ${themeConfig.menu} ${themeConfig.layout} ${themeConfig.rtlClass} main-section relative text-sm font-normal antialiased`}>
             {isLoading ? <Loading /> : children}
         </div>
     );

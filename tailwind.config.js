@@ -63,7 +63,7 @@ module.exports = {
                 },
             },
             fontFamily: {
-                nunito: ['var(--font-nunito)'],
+                sans: ['var(--font-iransans)'],
             },
             spacing: {
                 4.5: '18px',
